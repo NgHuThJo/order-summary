@@ -1,0 +1,74 @@
+@use "./abstracts/" as *;
+@use "./base/" as *;
+@use "./components/" as *;
+@use "./layout/" as *;
+@use "./utilities/" as *;
+
+.card {
+    overflow: hidden;
+}
+
+.hero {
+    width: 100%;
+    object-fit: cover;
+}
+
+.button__link {
+    --_c-button-link: var(--c-button-link, hsl(var(--c-card)));
+    --_bgc-button-link: var(--bgc-button-link, hsl(var(--bgc-card)));
+
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font: {
+        weight: var(--fw-link);
+    }
+    color: hsl(var(--_c-button-link));
+    background-color: hsl(var(--_bgc-button-link));
+
+    &--payment {
+        --c-button-link: var(--c-button-payment);
+        --bgc-button-link: var(--bgc-button-payment);
+
+        &:hover {
+            --bgc-button-link: var(--bgc-button-payment-hover);
+        }
+    }
+
+    &--cancel {
+        --c-button-link: var(--c-button-cancel);
+        --bgc-button-link: inherit;
+
+        &:hover {
+            --c-button-link: var(--c-button-cancel-hover);
+        }
+    }
+}
+
+.card__info {
+    @include grid;
+
+    gap: 1.5rem;
+    padding: 2rem;
+    text-align: center;
+    background-color: hsl(var(--bgc-card));
+}
+
+.change {
+    @include flex(null, space-between, center, 1rem);
+
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: hsl(var(--bgc-change));
+}
+
+.change-link {
+    text-decoration: underline;
+    font: {
+        weight: var(--fw-link);
+    }
+    color: hsl(var(--c-change-link));
+    
+    &:hover {
+        color: hsl(var(--c-change-link-hover));
+    }
+}

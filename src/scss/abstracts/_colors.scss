@@ -1,0 +1,60 @@
+// Primary colors
+// Naming convention based on position in color wheel
+// 30 - 210: warm - mid - cool
+// 210 - 30: cool - mid - warm
+$c-blue-c-050: 225 100% 94%;
+$c-blue-m-400: 245 75% 52%;
+
+// Neutral colors
+$c-blue-c-000: 225 100% 98%;
+$c-blue-cyan-600: 224 23% 55%;
+$c-blue-cyan-800: 223 47% 23%;
+
+// Color map for generating color utility classes
+$utility-color: (
+  "blue-cyan": (
+    "600": $c-blue-cyan-600, // c body
+    "800": $c-blue-cyan-800, // c heading
+  ),
+  "blue": (
+    "c-000": $c-blue-c-000, // bgc card
+    "c-050": $c-blue-c-050, // bgc body
+    "m-400": $c-blue-m-400, // bgc payment button hover
+  ),
+);
+
+// Color map for generating custom color properties
+$contextual-color: (
+  "color": (
+    "body": $c-blue-cyan-600,
+    "heading": $c-blue-cyan-800, 
+    "change-link": $c-blue-m-400,
+    "change-link-hover": $c-blue-m-400 / 0.75,
+    "button-payment": $c-blue-c-000,
+    "button-cancel": $c-blue-cyan-600,
+    "button-cancel-hover": $c-blue-cyan-800,
+  ),
+  "background-color": ( 
+    "body": $c-blue-c-050,
+    "card": $c-blue-c-000,
+    "change": $c-blue-c-050 / 0.25,
+    "button-payment": $c-blue-m-400,
+    "button-payment-hover": $c-blue-m-400 / 0.75,
+  ),
+);
+
+// Theme map for generating theme classes
+$theme-color: (
+  "dark": (
+    "color": (
+    ),
+    "background-color": (
+    ),
+  ),
+  "light": (
+    "color": (
+    ),
+    "background-color": (
+    ),
+  ),
+);
